@@ -6,7 +6,7 @@ const fs=require('fs')
 const path = require("path")
 
 //It will create a text file in a particular folder where the file name is current date-time.txt & its content is current timestamp
-app.post("/createFolder/:folderName",(req,res)=>{
+app.post("/createFile/:folderName",(req,res)=>{
 //Folder Created here..
     fs.mkdir(`./${req.params.folderName}`, (err) => {
         if (err) {
@@ -44,7 +44,7 @@ app.post("/createFolder/:folderName",(req,res)=>{
 })
 
 //It is to retrieve all the text files in that particular folder.
-app.get("/createFolder/:folderName",(req,res)=>{
+app.get("/readFolder/:folderName",(req,res)=>{
     
     fs.readdir(`./${req.params.folderName}`,(err,files)=>{
         if (err) throw err;
